@@ -1,6 +1,6 @@
 # stm32f4-driver
 
-驱动程序位于： `stm32f4-driver/test/src/` 目录下的 `inc` 和 `src` 文件夹下，已编写的驱动有
+驱动程序位于： `stm32f4-driver/test/src/` 目录下的 `include` 和 `source` 文件夹下，已编写的驱动有
 
 `adc`，
 `gpio`，
