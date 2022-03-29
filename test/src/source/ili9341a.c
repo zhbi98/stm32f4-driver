@@ -312,10 +312,111 @@ void ili9341_init()
     ili9341_fsmc_init();
     sleep_ms(200);
     ili9341_reset();
+// -----------------------------------
+    // ili9341_write_command(0xcf);
+    // ili9341_write_data(0x00); 
+    // ili9341_write_data(0xc1); 
+    // ili9341_write_data(0x30); 
+    // ili9341_write_command(0xed);  
+    // ili9341_write_data(0x64); 
+    // ili9341_write_data(0x03); 
+    // ili9341_write_data(0x12); 
+    // ili9341_write_data(0x81); 
 
+    // ili9341_write_command(0xe8);  
+    // ili9341_write_data(0x85); 
+    // ili9341_write_data(0x10); 
+    // ili9341_write_data(0x7a); 
+
+    // ili9341_write_command(0xcb);  
+    // ili9341_write_data(0x39); 
+    // ili9341_write_data(0x2c); 
+    // ili9341_write_data(0x00); 
+    // ili9341_write_data(0x34); 
+    // ili9341_write_data(0x02);
+
+    // ili9341_write_command(0xf7);  
+    // ili9341_write_data(0x20); 
+    // ili9341_write_command(0xea);  
+    // ili9341_write_data(0x00); 
+    // ili9341_write_data(0x00); 
+    // ili9341_write_command(0xc0); // Power control 
+    // ili9341_write_data(0x1b);    // VRH[5:0] 
+    // ili9341_write_command(0xc1); // Power control 
+    // ili9341_write_data(0x01);    // SAP[2:0];BT[3:0] 
+    // ili9341_write_command(0xc5); // VCM control 
+    // ili9341_write_data(0x30);    // 3F
+    // ili9341_write_data(0x30);    // 3C
+    // ili9341_write_command(0xc7); // VCM control2 
+    // ili9341_write_data(0xb7); 
+    // // direction seting
+    // // ili9341_write_command(0x36); // Memory access control 
+    // // ili9341_write_data(0x68);
+    // if (HORIZONTAL)
+    //     ili9341_direction(2);
+    // else
+    //     ili9341_direction(3);
+
+    // ili9341_write_command(0x3a);   
+    // ili9341_write_data(0x55); 
+    // ili9341_write_command(0xb1);   
+    // ili9341_write_data(0x00);   
+    // ili9341_write_data(0x1a); 
+    // ili9341_write_command(0xb6); // Display function control 
+    // ili9341_write_data(0x0a); 
+    // ili9341_write_data(0xa2); 
+    // ili9341_write_command(0xf2); // 3Gamma function disable 
+    // ili9341_write_data(0x00); 
+    // ili9341_write_command(0x26); // Gamma curve selected 
+    // ili9341_write_data(0x01); 
+    // ili9341_write_command(0xe0); // Set gamma 
+    // ili9341_write_data(0x0f); 
+    // ili9341_write_data(0x2a); 
+    // ili9341_write_data(0x28); 
+    // ili9341_write_data(0x08); 
+    // ili9341_write_data(0x0e); 
+    // ili9341_write_data(0x08); 
+    // ili9341_write_data(0x54); 
+    // ili9341_write_data(0xa9); 
+    // ili9341_write_data(0x43); 
+    // ili9341_write_data(0x0a); 
+    // ili9341_write_data(0x0f); 
+    // ili9341_write_data(0x00); 
+    // ili9341_write_data(0x00); 
+    // ili9341_write_data(0x00); 
+    // ili9341_write_data(0x00);       
+    // ili9341_write_command(0xe1); // Set gamma 
+    // ili9341_write_data(0x00);
+    // ili9341_write_data(0x15);
+    // ili9341_write_data(0x17);
+    // ili9341_write_data(0x07);
+    // ili9341_write_data(0x11);
+    // ili9341_write_data(0x06);
+    // ili9341_write_data(0x2b);
+    // ili9341_write_data(0x56);
+    // ili9341_write_data(0x3c);
+    // ili9341_write_data(0x05);
+    // ili9341_write_data(0x10);
+    // ili9341_write_data(0x0f);
+    // ili9341_write_data(0x3f);
+    // ili9341_write_data(0x3f);
+    // ili9341_write_data(0x0f);
+    // ili9341_write_command(0x2b); 
+    // ili9341_write_data(0x00);
+    // ili9341_write_data(0x00);
+    // ili9341_write_data(0x01);
+    // ili9341_write_data(0x3f);
+    // ili9341_write_command(0x2a); 
+    // ili9341_write_data(0x00);
+    // ili9341_write_data(0x00);
+    // ili9341_write_data(0x00);
+    // ili9341_write_data(0xef);   
+    // ili9341_write_command(0x11); // Exit sleep
+    // ili9341_write_command(0x29); // display on
+// -----------------------------------
     ili9341_write_command(0xcf);
     ili9341_write_data(0x00);
-    ili9341_write_data(0x81);
+    ili9341_write_data(0xc1); // If it is 0x81, jitter noise will appear.
     ili9341_write_data(0x30);
     
     ili9341_write_command(0xed);
@@ -328,7 +429,7 @@ void ili9341_init()
     ili9341_write_data(0x85);
     ili9341_write_data(0x10);
     ili9341_write_data(0x78);
-    
+
     ili9341_write_command(0xcb);
     ili9341_write_data(0x39);
     ili9341_write_data(0x2c);
@@ -347,21 +448,21 @@ void ili9341_init()
     ili9341_write_data(0x00);
     ili9341_write_data(0x1b);
     
-    ili9341_write_command(0xb6);
+    ili9341_write_command(0xb6); // Display function control 
     ili9341_write_data(0x0a);
     ili9341_write_data(0xa2);
     
-    ili9341_write_command(0xc0);
-    ili9341_write_data(0x35);
+    ili9341_write_command(0xc0); // Power control
+    ili9341_write_data(0x1b);
 
-    ili9341_write_command(0xc1);
-    ili9341_write_data(0x11);
+    ili9341_write_command(0xc1); // Power control 
+    ili9341_write_data(0x01);
 
-    ili9341_write_command(0xc5);
+    ili9341_write_command(0xc5); // VCM control
     ili9341_write_data(0x45);
     ili9341_write_data(0x45);
     
-    ili9341_write_command(0xc7);
+    ili9341_write_command(0xc7); // VCM control 2
     ili9341_write_data(0xa2);
     
     ili9341_write_command(0xf2);
@@ -387,7 +488,7 @@ void ili9341_init()
     ili9341_write_data(0x07);
     ili9341_write_data(0x00);
     
-    ili9341_write_command(0Xe1);
+    ili9341_write_command(0xe1);
     ili9341_write_data(0x00);
     ili9341_write_data(0x19);
     ili9341_write_data(0x1b);
@@ -411,7 +512,7 @@ void ili9341_init()
     else
         ili9341_direction(3);
 
-    ili9341_write_command (0x2a);
+    ili9341_write_command(0x2a);
     ili9341_write_data(0x00);
     ili9341_write_data(0x00);
     ili9341_write_data(0x00);
@@ -430,7 +531,6 @@ void ili9341_init()
     sleep_ms(120);   
     ili9341_write_command(0x29);
 
-    ili9341_clear(white);
     ili9341_backlight(1);
 }
 
