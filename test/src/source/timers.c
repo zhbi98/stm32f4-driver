@@ -5,7 +5,7 @@
 -----------------------------------------
     Timing 0.1s
 
-    prescaler = AHB Clock / Timing Clock
+    Prescaler = AHB Clock / Timing Clock
               = 84(MHz) / 50(KHz)
               = 84000000(hz) / 50000(hz)
               = 1680
@@ -23,7 +23,7 @@
 -----------------------------------------
     Timing 0.5s
     
-    prescaler = AHB Clock / Timing Clock
+    Prescaler = AHB Clock / Timing Clock
               = 84(MHz) / 10(KHz)
               = 84000000(hz) / 10000(hz)
               = 8400
