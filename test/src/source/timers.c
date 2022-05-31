@@ -5,27 +5,36 @@
 -----------------------------------------
     Timing 0.1s
 
-    0.1(s) = 100000(us)
-    100000 / 5000(times) = 20(us/times)
-
-    T = 1000000(us) / f = 20(us)
-    f = 50000(hz)
-
-    84000000(hz) / prescaler = 50000(hz)
-    prescaler = 84000000(hz) / 50000(hz)
+    prescaler = AHB Clock / Timing Clock
+              = 84(MHz) / 50(KHz)
+              = 84000000(hz) / 50000(hz)
               = 1680
+
+    T = 1 / f
+      = 1(s) / f(Hz)
+      = 1000000(us) / 50000(hz)
+      = 20(us/times)
+
+    Period = Timing / T
+           = 0.1(s) / 20(us/times)
+           = 100000(us) / 20(us/times)
+           = 5000(times)
+
 -----------------------------------------
-    Timing 0.5s
-
-    0.5(s) = 500000(us)
-    500000 / 5000(times) = 100(us/times)
-
-    T = 1000000(us) / f = 100(us)
-    f = 10000(hz)
-
-    84000000(hz) / prescaler = 10000(hz)
-    prescaler = 84000000(hz) / 10000(hz)
+    prescaler = AHB Clock / Timing Clock
+              = 84(MHz) / 10(KHz)
+              = 84000000(hz) / 10000(hz)
               = 8400
+
+    T = 1 / f
+      = 1(s) / f(Hz)
+      = 1000000(us) / 10000(hz)
+      = 100(us/times)
+
+    Period = Timing / T
+           = 0.5(s) / 100(us/times)
+           = 500000(us) / 100(us/times)
+           = 5000(times)
 -----------------------------------------
 */
 
