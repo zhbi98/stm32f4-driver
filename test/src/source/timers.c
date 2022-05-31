@@ -21,6 +21,8 @@
            = 5000(times)
 
 -----------------------------------------
+    Timing 0.5s
+    
     prescaler = AHB Clock / Timing Clock
               = 84(MHz) / 10(KHz)
               = 84000000(hz) / 10000(hz)
